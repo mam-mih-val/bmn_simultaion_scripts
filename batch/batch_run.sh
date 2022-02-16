@@ -4,12 +4,12 @@ format='+%Y/%m/%d-%H:%M:%S'
 
 date $format
 
+job_num=$(($SLURM_ARRAY_TASK_ID))
+filelist=$lists_dir/$(ls $lists_dir | sed "${job_num}q;d")
+
 cd $output_dir
 mkdir -p $job_num
 cd $job_num
-
-job_num=$(($SLURM_ARRAY_TASK_ID))
-filelist=$lists_dir/$(ls $lists_dir | sed "${job_num}q;d")
 
 n_events=10
 input_file=$(head -n 1 $filelist)
