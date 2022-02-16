@@ -10,6 +10,7 @@ export FAIRROOTPATH=/cvmfs/fairsoft.gsi.de/debian10/fairroot/v18.6.7_fs_apr21p2/
 
 . /lustre/hades/user/mmamaev/bmnroot/build/config.sh
 
+export G4PARTICLEXSDATA=$SIMPATH/share/Geant4-10.7.1/data/G4PARTICLEXS3.1.1/
 export G4ENSDFSTATEDATA=$SIMPATH/share/Geant4-10.7.1/data/G4ENSDFSTATE2.3/
 export G4ABLADATA=$SIMPATH/share/Geant4-10.7.1/data/G4ABLA3.1/
 export G4LEDATA=$SIMPATH/share/Geant4-10.7.1/data/G4EMLOW7.13/
