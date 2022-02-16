@@ -23,7 +23,7 @@ export G4REALSURFACEDATA=$SIMPATH/share/Geant4-10.7.1/data/RealSurface2.2/
 str_input_file=\"$input_file\"
 str_output_file=\"$output_file\"
 
-root -q "/lustre/nyx/hades/user/mmamaev/bmn_simultaion_scripts/src/run_sim_bmn.C( $str_input_file, $str_input_file, 0, $n_events, $generator )"
+root -q "/lustre/nyx/hades/user/mmamaev/bmn_simultaion_scripts/src/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, $generator )"
 
 str_input_file=\"$output_file\"
 str_output_file=\"dst_$output_file\"
