@@ -28,6 +28,6 @@ root -q "/lustre/nyx/hades/user/mmamaev/bmn_simultaion_scripts/src/run_sim_bmn.C
 str_input_file=\"$output_file\"
 str_output_file=\"dst_$output_file\"
 
-root -q "/lustre/nyx/hades/user/mmamaev/bmn_simultaion_scripts/src/run_reco_bmn.C( $str_input_file, $str_input_file, 0, $n_events )"
+root -q "/lustre/nyx/hades/user/mmamaev/bmn_simultaion_scripts/src/run_reco_bmn.C( $str_input_file, $str_output_file, 0, $n_events )"
 
 echo PROCESS FINISHED
