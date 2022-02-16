@@ -36,6 +36,6 @@ sbatch --wait \
       -e ${log_dir}/%A_%a.e \
       -o ${log_dir}/%A_%a.o \
       --export=output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator \
-      -- /lustre/nyx/hades/user/mmamaev/bmn_simultaion_scripts/batch_run.sh
+      -- /lustre/nyx/hades/user/mmamaev/bmn_simultaion_scripts/batch/batch_run.sh
 
 echo JOBS HAVE BEEN COMPLETED!
