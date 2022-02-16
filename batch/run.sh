@@ -1,9 +1,8 @@
 #!/bin/bash
 
-n_files=$1
-file_list=$2
-output_dir=$3
-generator=$4
+file_list=$1
+output_dir=$2
+generator=$3
 
 partition=debug
 time=0:20:00
