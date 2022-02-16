@@ -17,7 +17,7 @@ output_file=output.root
 
 cp $input_file .
 gzip -d "$(basename $input_file)"
-input_file="${$(basename $input_file)%.*}.dat"
+input_file="${"$(basename $input_file)"%.*}.dat"
 
 export SIMPATH=/cvmfs/fairsoft.gsi.de/debian10/fairsoft/apr21p2/
 export FAIRROOTPATH=/cvmfs/fairsoft.gsi.de/debian10/fairroot/v18.6.7_fs_apr21p2/
