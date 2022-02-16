@@ -8,8 +8,8 @@ output_file=$4
 export SIMPATH=/cvmfs/fairsoft.gsi.de/debian10/fairsoft/apr21p2/
 export FAIRROOTPATH=/cvmfs/fairsoft.gsi.de/debian10/fairroot/v18.6.7_fs_apr21p2/
 
-. /lustre/hades/user/mmamaev/bmnroot/build/config.sh
-. $FAIRROOTPATH/bin/FairRootConfig.sh
+source /lustre/hades/user/mmamaev/bmnroot/build/config.sh
+source -a $FAIRROOTPATH/bin/FairRootConfig.sh
 
 #export G4PARTICLEXSDATA=$SIMPATH/share/Geant4-10.7.1/data/G4PARTICLEXS3.1.1/
 #export G4ENSDFSTATEDATA=$SIMPATH/share/Geant4-10.7.1/data/G4ENSDFSTATE2.3/
