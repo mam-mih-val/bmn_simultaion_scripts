@@ -5,7 +5,6 @@ generator=$2
 input_file=\"$3\"
 output_file=\"$4\"
 
-
 export SIMPATH=/cvmfs/fairsoft.gsi.de/debian10/fairsoft/apr21p2/
 export FAIRROOTPATH=/cvmfs/fairsoft.gsi.de/debian10/fairroot/v18.6.7_fs_apr21p2/
 
