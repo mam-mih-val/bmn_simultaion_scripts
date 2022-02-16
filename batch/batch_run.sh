@@ -23,16 +23,17 @@ export SIMPATH=/cvmfs/fairsoft.gsi.de/debian10/fairsoft/apr21p2/
 export FAIRROOTPATH=/cvmfs/fairsoft.gsi.de/debian10/fairroot/v18.6.7_fs_apr21p2/
 
 . /lustre/hades/user/mmamaev/bmnroot/build/config.sh
+. $FAIRROOTPATH/bin/FairRootConfig.sh
 
-export G4PARTICLEXSDATA=$SIMPATH/share/Geant4-10.7.1/data/G4PARTICLEXS3.1.1/
-export G4ENSDFSTATEDATA=$SIMPATH/share/Geant4-10.7.1/data/G4ENSDFSTATE2.3/
-export G4ABLADATA=$SIMPATH/share/Geant4-10.7.1/data/G4ABLA3.1/
-export G4LEDATA=$SIMPATH/share/Geant4-10.7.1/data/G4EMLOW7.13/
-export G4LEVELGAMMADATA=$SIMPATH/share/Geant4-10.7.1/data/PhotonEvaporation5.7/
-export G4NEUTRONHPDATA=$SIMPATH/share/Geant4-10.7.1/data/G4NDL4.6/
-export G4PIIDATA=$SIMPATH/share/Geant4-10.7.1/data/G4PII1.3/
-export G4RADIOACTIVEDATA=$SIMPATH/share/Geant4-10.7.1/data/RadioactiveDecay5.6/
-export G4REALSURFACEDATA=$SIMPATH/share/Geant4-10.7.1/data/RealSurface2.2/
+#export G4PARTICLEXSDATA=$SIMPATH/share/Geant4-10.7.1/data/G4PARTICLEXS3.1.1/
+#export G4ENSDFSTATEDATA=$SIMPATH/share/Geant4-10.7.1/data/G4ENSDFSTATE2.3/
+#export G4ABLADATA=$SIMPATH/share/Geant4-10.7.1/data/G4ABLA3.1/
+#export G4LEDATA=$SIMPATH/share/Geant4-10.7.1/data/G4EMLOW7.13/
+#export G4LEVELGAMMADATA=$SIMPATH/share/Geant4-10.7.1/data/PhotonEvaporation5.7/
+#export G4NEUTRONHPDATA=$SIMPATH/share/Geant4-10.7.1/data/G4NDL4.6/
+#export G4PIIDATA=$SIMPATH/share/Geant4-10.7.1/data/G4PII1.3/
+#export G4RADIOACTIVEDATA=$SIMPATH/share/Geant4-10.7.1/data/RadioactiveDecay5.6/
+#export G4REALSURFACEDATA=$SIMPATH/share/Geant4-10.7.1/data/RealSurface2.2/
 
 str_input_file=\"$input_file\"
 str_output_file=\"$output_file\"
