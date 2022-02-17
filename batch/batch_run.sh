@@ -11,7 +11,7 @@ cd $output_dir
 mkdir -p $job_num
 cd $job_num
 
-n_events=10
+n_events=100
 input_file=$(head -n 1 $filelist)
 output_file=output.root
 
