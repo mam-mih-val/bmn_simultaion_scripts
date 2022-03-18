@@ -4,8 +4,8 @@ file_list=$1
 output_dir=$2
 generator=$3
 
-partition=main
-time=8:00:00
+partition=fast
+time=1:00:00
 
 lists_dir=${output_dir}/lists/
 log_dir=${output_dir}/log/
