@@ -4,7 +4,7 @@ file_list=$1
 output_dir=$2
 generator=$3
 
-time=8:00:00
+time=0:15:00
 
 lists_dir=${output_dir}/lists/
 log_dir=${output_dir}/log/
