@@ -26,7 +26,8 @@ echo lists_dir: $lists_dir
 echo n_runs: $n_runs
 echo job_range: $job_range
 
-qsub -N BMN-SIM \
+qsub  -wd $PWD -cwd \
+      -N BMN-SIM \
       -l h_rt=$time \
       -l s_rt=$time \
       -t $job_range \
