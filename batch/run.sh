@@ -4,8 +4,7 @@ file_list=$1
 output_dir=$2
 generator=$3
 
-partition=cpu
-time=14:00:00
+time=8:00:00
 
 lists_dir=${output_dir}/lists/
 log_dir=${output_dir}/log/
@@ -27,14 +26,13 @@ echo lists_dir: $lists_dir
 echo n_runs: $n_runs
 echo job_range: $job_range
 
-sbatch --wait \
-      -J Files \
-      -p $partition \
-      -t $time \
-      -a $job_range \
-      -e ${log_dir}/%A_%a.e \
-      -o ${log_dir}/%A_%a.o \
-      --export=output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator \
-      -- /mnt/pool/nica/7/mam2mih/soft/basov/bmn_simultaion_scripts/batch/batch_run.sh
+qsub -N BMN-SIM \
+      -l h_rt=$time \
+      -l s_rt=$time \
+      -t $job_range \
+      -e ${log_dir}/ \
+      -o ${log_dir}/ \
+      -v output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator \
+      /scratch1/mmamaev/bmn_simultaion_scripts/batch/batch_run.sh
 
 echo JOBS HAVE BEEN COMPLETED!
