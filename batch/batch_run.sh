@@ -15,6 +15,9 @@ n_events=10
 input_file=$(head -n 1 $filelist)
 output_file=geat_output.root
 
+source /cvmfs/nica.jinr.ru/sw/os/login.sh
+module add GCC-Toolchain/
+
 source /scratch1/mmamaev/bmn_environment.sh
 
 str_input_file=\"$input_file\"
