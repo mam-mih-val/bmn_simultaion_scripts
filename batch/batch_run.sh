@@ -25,7 +25,7 @@ root -q "/mnt/pool/nica/7/mam2mih/soft/basov/bmnroot-mamaev/macro/run8/run_sim_b
 str_input_file=\"$output_file\"
 str_output_file=\"dst_$output_file\"
 
-root -q "/mnt/pool/nica/7/mam2mih/soft/basov/bmnroot-mamaev/macro/run8/run_reco_bmn.C( $str_input_file, $str_output_file, 0, $n_events )"
+root -q "/mnt/pool/nica/7/mam2mih/soft/basov/bmnroot-mamaev/macro/run/run_reco_bmn.C( $str_input_file, $str_output_file, 0, $n_events )"
 
 str_atree_file=\"atree_$output_file\"
 str_geometry_file=\"full_geometry.root\"
