@@ -5,7 +5,7 @@ output_dir=$2
 generator=$3
 
 partition=fast
-time=0:01:00
+time=1:00:00
 
 lists_dir=${output_dir}/lists/
 log_dir=${output_dir}/log/
