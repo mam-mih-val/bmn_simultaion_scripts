@@ -11,7 +11,7 @@ cd $output_dir
 mkdir -p $job_num
 cd $job_num
 
-n_events=10
+n_events=1000
 input_file=$(head -n 1 $filelist)
 output_file=geat_output.root
 
@@ -33,8 +33,8 @@ root -q "/scratch1/mmamaev/bmnroot/macro/run8/run_reco_bmn.C( $str_input_file, $
 str_atree_file=\"atree_$output_file\"
 str_geometry_file=\"full_geometry.root\"
 
-root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file )"
+#root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file )"
 
-root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysistree_qa.C( $str_atree_file, true )"
+#root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysistree_qa.C( $str_atree_file, true )"
 
 echo PROCESS FINISHED
