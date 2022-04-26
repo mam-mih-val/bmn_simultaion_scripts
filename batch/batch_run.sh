@@ -33,7 +33,7 @@ str_output_file=\"dst_$output_file\"
 str_atree_file=\"atree2_$output_file\"
 str_geometry_file=\"full_geometry.root\"
 
-#root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file )"
+root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file )"
 
 str_common_qa=\"common_qa.root\"
 root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysistree_qa.C( $str_atree_file, $str_common_qa, true )"
