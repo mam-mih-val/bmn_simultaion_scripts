@@ -20,12 +20,12 @@ source /mnt/pool/nica/7/mam2mih/soft/basov/bmn_environment.sh
 str_input_file=\"$input_file\"
 str_output_file=\"$output_file\"
 
-root -q "/mnt/pool/nica/7/mam2mih/soft/basov/bmnroot-mamaev/macro/run/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, $generator )"
+#root -q "/mnt/pool/nica/7/mam2mih/soft/basov/bmnroot-mamaev/macro/run/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, $generator )"
 
 str_input_file=\"$output_file\"
 str_output_file=\"dst2_$output_file\"
 
-root -q "/mnt/pool/nica/7/mam2mih/soft/basov/bmnroot-mamaev/macro/run/run_reco_bmn.C( $str_input_file, $str_output_file, 0, $n_events )"
+#root -q "/mnt/pool/nica/7/mam2mih/soft/basov/bmnroot-mamaev/macro/run/run_reco_bmn.C( $str_input_file, $str_output_file, 0, $n_events )"
 
 str_atree_file=\"atree2_$output_file\"
 str_geometry_file=\"full_geometry.root\"
