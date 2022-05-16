@@ -30,7 +30,7 @@ str_output_file=\"dst2_$output_file\"
 str_atree_file=\"atree2_$output_file\"
 str_geometry_file=\"full_geometry.root\"
 
-root -q "/mnt/pool/nica/7/mam2mih/soft/basov/bmnroot-mamaev/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file )"
+#root -q "/mnt/pool/nica/7/mam2mih/soft/basov/bmnroot-mamaev/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file )"
 
 qa_file=\"tracking_qa.root\"
 
