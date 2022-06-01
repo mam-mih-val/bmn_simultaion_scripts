@@ -23,12 +23,12 @@ source /scratch1/mmamaev/bmn_environment.sh
 str_input_file=\"$input_file\"
 str_output_file=\"$output_file\"
 
-root -q "/scratch1/mmamaev/bmn_simultaion_scripts/macro/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, $generator, $field )"
+root -q "/scratch1/mmamaev/bmn_simultaion_scripts/macro/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, $generator )"
 
 str_input_file=\"$output_file\"
 str_output_file=\"dst_$output_file\"
 
-root -q "/scratch1/mmamaev/bmnroot/macro/run/run_reco_bmn.C( $str_input_file, $str_output_file, 0, $n_events, $field )"
+root -q "/scratch1/mmamaev/bmnroot/macro/run/run_reco_bmn.C( $str_input_file, $str_output_file, 0, $n_events )"
 
 str_atree_file=\"atree_$output_file\"
 str_geometry_file=\"full_geometry.root\"

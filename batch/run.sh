@@ -3,7 +3,6 @@
 file_list=$1
 output_dir=$2
 generator=$3
-field=$4
 
 time=14:00:00
 
@@ -34,7 +33,7 @@ qsub  -wd $PWD -cwd \
       -t $job_range \
       -e ${log_dir}/ \
       -o ${log_dir}/ \
-      -v output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator,field=$field \
+      -v output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator \
       /scratch1/mmamaev/bmn_simultaion_scripts/batch/batch_run.sh
 
 echo JOBS HAVE BEEN COMPLETED!
