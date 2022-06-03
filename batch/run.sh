@@ -36,4 +36,4 @@ qsub  -wd $PWD -cwd \
       -v output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator \
       /scratch1/mmamaev/bmn_simultaion_scripts/batch/batch_run.sh
 
-echo JOBS HAVE BEEN COMPLETED!
+echo JOBS HAVE BEEN SUBMITTED!
