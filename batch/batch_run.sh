@@ -13,7 +13,7 @@ cd $job_num
 
 n_events=1000
 input_file=$(head -n 1 $filelist)
-output_file=geat_output.root
+output_file=geant_output.root
 
 source /cvmfs/nica.jinr.ru/sw/os/login.sh
 module add GCC-Toolchain/
@@ -23,7 +23,7 @@ source /scratch1/mmamaev/bmn_environment.sh
 str_input_file=\"$input_file\"
 str_output_file=\"$output_file\"
 
-root -q "/scratch1/mmamaev/bmn_simultaion_scripts/macro/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, $generator )"
+root -q "/scratch1/mmamaev/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, $generator )"
 
 str_input_file=\"$output_file\"
 str_output_file=\"dst_$output_file\"
