@@ -27,6 +27,7 @@ echo n_runs: $n_runs
 echo job_range: $job_range
 
 qsub  -wd $PWD -cwd \
+      -l h=!(ncx182.jinr.ru|ncx211.jinr.ru) \
       -N QnAnalysis \
       -l h_rt=$time \
       -l s_rt=$time \
