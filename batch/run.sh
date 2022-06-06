@@ -8,8 +8,8 @@ time=14:00:00
 
 working_dir=/var/tmp/mmamaev/$(basename $output_dir)/$(basename ${file_list})
 output_dir=${output_dir}/$(basename ${file_list})
-lists_dir=${output_dir}/lists/
-log_dir=${output_dir}/log/
+lists_dir=${working_dir}/lists/
+log_dir=${working_dir}/log/
 
 mkdir -p $working_dir
 mkdir -p $output_dir
