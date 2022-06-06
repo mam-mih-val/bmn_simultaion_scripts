@@ -8,10 +8,10 @@ time=14:00:00
 
 working_dir=/tmp/mmamaev/$(basename $output_dir)/$(basename ${file_list})
 output_dir=${output_dir}/$(basename ${file_list})
-lists_dir=${working_dir}/lists/
-log_dir=${working_dir}/log/
+lists_dir=${output_dir}/lists/
+log_dir=${output_dir}/log/
 
-mkdir -p $working_dir
+#mkdir -p $working_dir
 mkdir -p $output_dir
 mkdir -p $log_dir
 mkdir -p $lists_dir
@@ -23,7 +23,7 @@ n_runs=$(ls $lists_dir/*.list | wc -l)
 job_range=1-$n_runs
 
 echo file list: $file_list
-echo working_dir: $working_dir
+#echo working_dir: $working_dir
 echo output_dir: $output_dir
 echo log_dir: $log_dir
 echo lists_dir: $lists_dir

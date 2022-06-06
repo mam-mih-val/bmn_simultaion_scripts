@@ -8,7 +8,7 @@ date $format
 job_num=$(($SGE_TASK_ID))
 filelist=$lists_dir/$(ls $lists_dir | sed "${job_num}q;d")
 
-cd $working_dir
+cd $output_dir
 mkdir -p $job_num
 cd $job_num
 
