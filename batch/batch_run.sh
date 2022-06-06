@@ -8,11 +8,11 @@ date $format
 job_num=$(($SGE_TASK_ID))
 filelist=$lists_dir/$(ls $lists_dir | sed "${job_num}q;d")
 
-cd $output_dir
+cd $working_dir
 mkdir -p $job_num
 cd $job_num
 
-n_events=1000
+n_events=10
 input_file=$(head -n 1 $filelist)
 output_file=geant_output.root
 
@@ -40,5 +40,7 @@ str_common_qa=\"common_qa.root\"
 root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysistree_qa.C( $str_atree_file, $str_common_qa, true )"
 str_tracking_qa=\"tracking_qa.root\"
 root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_tracking_qa.C( $str_atree_file, $str_tracking_qa, true )"
+
+mv $(pwd) ${output_dir}
 
 echo PROCESS FINISHED
