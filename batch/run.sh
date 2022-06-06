@@ -37,7 +37,7 @@ qsub  -wd $PWD -cwd \
       -t $job_range \
       -e ${log_dir}/ \
       -o ${log_dir}/ \
-      -v output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator \
+      -v output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator,working_dir=$working_dir \
       /scratch1/mmamaev/bmn_simultaion_scripts/batch/batch_run.sh
 
 echo JOBS HAVE BEEN SUBMITTED!
