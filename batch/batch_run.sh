@@ -41,6 +41,4 @@ root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysistree_qa.C( 
 str_tracking_qa=\"tracking_qa.root\"
 root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_tracking_qa.C( $str_atree_file, $str_tracking_qa, true )"
 
-mv $(pwd) ${output_dir}
-
 echo PROCESS FINISHED
