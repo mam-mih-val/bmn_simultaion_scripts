@@ -6,7 +6,7 @@ n_files=$3
 
 time=14:00:00
 
-output_dir=${output_dir}/$(basename ${file_list})
+output_dir=${output_dir}/
 lists_dir=${output_dir}/lists/
 log_dir=${output_dir}/log/
 
