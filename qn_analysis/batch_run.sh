@@ -58,7 +58,7 @@ echo
 date
 echo "Running correlation ..."
 /scratch1/mmamaev/QnAnalysis/build/src/QnAnalysisCorrelate/QnAnalysisCorrelate \
-                                                                              --input-file correction_in.root \
+                                                                              --input-file correction_out.root \
                                                                               --configuration-file /scratch1/mmamaev/QnAnalysis/setups/bmatn/xecs_correlations.yml \
                                                                               --configuration-name _tasks \
                                                                               -o correlation_out.root
