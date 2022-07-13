@@ -34,26 +34,26 @@ echo "Running correction 1st step ..."
                                                                           -o correction_out.root \
                                                                           --yaml-config-file /scratch1/mmamaev/QnAnalysis/setups/bmatn/xecs_corrections.yml \
                                                                           --yaml-config-name BMN
-mv correction_out.root correction_in.root
-echo
-date
-echo "Running correction 2nd step ..."
-/scratch1/mmamaev/QnAnalysis/build/src/QnAnalysisCorrect/QnAnalysisCorrect \
-                                                                          -i $filelist extra.list \
-                                                                          -t rTree eTree \
-                                                                          -o correction_out.root \
-                                                                          --yaml-config-file /scratch1/mmamaev/QnAnalysis/setups/bmatn/xecs_corrections.yml \
-                                                                          --yaml-config-name BMN
-mv correction_out.root correction_in.root
-echo
-date
-echo "Running correction 3d step ..."
-/scratch1/mmamaev/QnAnalysis/build/src/QnAnalysisCorrect/QnAnalysisCorrect \
-                                                                          -i $filelist extra.list \
-                                                                          -t rTree eTree \
-                                                                          -o correction_out.root \
-                                                                          --yaml-config-file /scratch1/mmamaev/QnAnalysis/setups/bmatn/xecs_corrections.yml \
-                                                                          --yaml-config-name BMN
+#mv correction_out.root correction_in.root
+#echo
+#date
+#echo "Running correction 2nd step ..."
+#/scratch1/mmamaev/QnAnalysis/build/src/QnAnalysisCorrect/QnAnalysisCorrect \
+#                                                                          -i $filelist extra.list \
+#                                                                          -t rTree eTree \
+#                                                                          -o correction_out.root \
+#                                                                          --yaml-config-file /scratch1/mmamaev/QnAnalysis/setups/bmatn/xecs_corrections.yml \
+#                                                                          --yaml-config-name BMN
+#mv correction_out.root correction_in.root
+#echo
+#date
+#echo "Running correction 3d step ..."
+#/scratch1/mmamaev/QnAnalysis/build/src/QnAnalysisCorrect/QnAnalysisCorrect \
+#                                                                          -i $filelist extra.list \
+#                                                                          -t rTree eTree \
+#                                                                          -o correction_out.root \
+#                                                                          --yaml-config-file /scratch1/mmamaev/QnAnalysis/setups/bmatn/xecs_corrections.yml \
+#                                                                          --yaml-config-name BMN
 
 echo
 date
