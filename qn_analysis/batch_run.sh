@@ -23,6 +23,7 @@ echo "Running preprocessing ..."
                                                         -i $filelist \
                                                         -t rTree \
                                                         --output-tree-name eTree \
+                                                        -e /scratch1/mmamaev/bmn_preprocessing/efficiency/efficiency.root \
                                                         -o extra.root
 ls $(pwd)/extra.root > extra.list
 echo
