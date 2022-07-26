@@ -24,7 +24,7 @@ source /scratch1/mmamaev/bmn_environment.sh
 str_input_file=\"$input_file\"
 str_output_file=\"$output_file\"
 
-root -q "/scratch1/mmamaev/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, UNIGEN )"
+root -q "/scratch1/mmamaev/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, UNIGEN, true, 3.8/4.85 )"
 
 str_input_file=\"$output_file\"
 str_output_file=\"dst_$output_file\"
