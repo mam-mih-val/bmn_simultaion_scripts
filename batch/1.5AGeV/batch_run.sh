@@ -16,8 +16,8 @@ n_events=1000
 input_file=$(head -n 1 $filelist)
 output_file=geant_output.root
 
-module add GVR/v1.0-1
-module add gcc/v11.2.0
+#module add GVR/v1.0-1
+#module add gcc/v11.2.0
 module add FairSoft/apr21patches_gcc1120
 export FAIRROOTPATH=/lustre/stor1/parfenov/fairroot/install
 source /lustre/stor1/parfenov/bmnroot/build/config.sh
