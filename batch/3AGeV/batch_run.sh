@@ -47,7 +47,7 @@ root -q "/lustre/stor1/parfenov/bmnroot/macro/run/run_reco_bmn.C( $str_input_fil
 str_atree_file=\"atree_$output_file\"
 str_geometry_file=\"full_geometry.root\"
 
-root -q "/lustre/stor1/parfenov/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file )"
+root -q "/lustre/stor1/parfenov/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file, 3.0 )"
 
 str_common_qa=\"common_qa.root\"
 root -q "/lustre/stor1/parfenov/bmnroot/analysis/common/macro/run_analysistree_qa.C( $str_atree_file, $str_common_qa, true )"
