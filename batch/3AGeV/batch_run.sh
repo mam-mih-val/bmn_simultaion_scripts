@@ -1,5 +1,4 @@
 #!/bin/bash
-#$ -l h=!(ncx182.jinr.ru|ncx211.jinr.ru|ncx112.jinr.ru|ncx114.jinr.ru|ncx115.jinr.ru|ncx116.jinr.ru|ncx117.jinr.ru)
 
 format='+%Y/%m/%d-%H:%M:%S'
 
@@ -16,11 +15,11 @@ n_events=1000
 input_file=$(head -n 1 $filelist)
 output_file=geant_output.root
 
-module add GVR/v1.0-1
-module add gcc/v11.2.0
+#module add GVR/v1.0-1
+#module add gcc/v11.2.0
 module add FairSoft/apr21patches_gcc1120
 export FAIRROOTPATH=/lustre/stor1/parfenov/fairroot/install
-source /lustre/stor1/parfenov/bmnroot/build/config.sh
+source /lustre/stor1/parfenov/bmnroot/build-centos7/config.sh
 
 echo $SIMPATH
 echo $FAIRROOTPATH
