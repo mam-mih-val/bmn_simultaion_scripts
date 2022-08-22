@@ -4,7 +4,7 @@ file_list=$1
 output_dir=$2
 generator=$3
 
-partition=cpu
+partition=cascade
 time=14:00:00
 
 lists_dir=${output_dir}/lists/
@@ -27,8 +27,7 @@ echo lists_dir: $lists_dir
 echo n_runs: $n_runs
 echo job_range: $job_range
 
-sbatch --wait \
-      -J Files \
+sbatch -J Files \
       -p $partition \
       -t $time \
       -a $job_range \

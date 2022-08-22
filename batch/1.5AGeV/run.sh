@@ -4,7 +4,7 @@ file_list=$1
 output_dir=$2
 generator=$3
 
-partition=cpu
+partition=cascade
 time=14:00:00
 
 lists_dir=${output_dir}/lists/
@@ -27,14 +27,13 @@ echo lists_dir: $lists_dir
 echo n_runs: $n_runs
 echo job_range: $job_range
 
-sbatch --wait \
-      -J Files \
+sbatch -J Files \
       -p $partition \
       -t $time \
       -a $job_range \
       -e ${log_dir}/%A_%a.e \
       -o ${log_dir}/%A_%a.o \
       --export=output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator \
-      -- /lustre/stor1/parfenov/bmn_simultaion_scripts/batch/3AGeV/batch_run.sh
+      -- /lustre/stor1/parfenov/bmn_simultaion_scripts/batch/1.5AGeV/batch_run.sh
 
 echo JOBS HAVE BEEN COMPLETED!
