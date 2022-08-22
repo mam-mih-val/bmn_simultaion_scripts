@@ -24,7 +24,7 @@ source /scratch1/mmamaev/bmn_environment.sh
 str_input_file=\"$input_file\"
 str_output_file=\"$output_file\"
 
-root -q "/scratch1/mmamaev/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, UNIGEN, true, 3.8/4.85 )"
+root -q "/scratch1/mmamaev/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, UNIGEN, true, 2.25/4.85 )"
 
 str_input_file=\"$output_file\"
 str_output_file=\"dst_$output_file\"
@@ -34,7 +34,7 @@ root -q "/scratch1/mmamaev/bmnroot/macro/run/run_reco_bmn.C( $str_input_file, $s
 str_atree_file=\"atree_$output_file\"
 str_geometry_file=\"full_geometry.root\"
 
-root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file )"
+root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file, 2.517 )"
 
 str_common_qa=\"common_qa.root\"
 root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysistree_qa.C( $str_atree_file, $str_common_qa, true )"
