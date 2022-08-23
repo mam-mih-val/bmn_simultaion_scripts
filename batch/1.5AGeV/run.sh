@@ -4,7 +4,7 @@ file_list=$1
 output_dir=$2
 generator=$3
 
-partition=cascade
+partition=mpd
 time=14:00:00
 
 lists_dir=${output_dir}/lists/
@@ -29,6 +29,7 @@ echo job_range: $job_range
 
 sbatch -J Files \
       -p $partition \
+      -q dirac \
       -t $time \
       -a $job_range \
       -e ${log_dir}/%A_%a.e \

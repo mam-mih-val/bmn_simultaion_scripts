@@ -11,9 +11,14 @@ cd $output_dir
 mkdir -p $job_num
 cd $job_num
 
-n_events=1000
+n_events=500
 input_file=$(head -n 1 $filelist)
 output_file=geant_output.root
+sim_file_name=sim.root
+rec_file_name=rec.root
+atree_file_name=atree.root
+common_qa_file_name=common.root
+tracking_qa_file_name=tracking.root
 
 module add GVR/v1.0-1
 module add gcc/v11.2.0
@@ -34,24 +39,24 @@ export G4PIIDATA=$SIMPATH/share/Geant4-10.7.1/data/G4PII1.3/
 export G4RADIOACTIVEDATA=$SIMPATH/share/Geant4-10.7.1/data/RadioactiveDecay5.6/
 export G4REALSURFACEDATA=$SIMPATH/share/Geant4-10.7.1/data/RealSurface2.2/
 
-str_input_file=\"$input_file\"
-str_output_file=\"$output_file\"
+for start in 0 500
+do
+  str_input_file=\"$input_file\"
+  str_sim_file_name=\"$((start))_$((sim_file_name))\"
+  str_rec_file_name=\"$((start))_$((rec_file_name))\"
+  str_atree_file_name=\"$((start))_$((atree_file_name))\"
+  str_common_file_name=\"$((start))_$((common_qa_file_name))\"
+  str_tracking_file_name=\"$((start))_$((tracking_qa_file_name))\"
+  str_geometry_file=\"full_geometry.root\"
 
-root -q "/lustre/stor1/parfenov/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_output_file, 0, $n_events, UNIGEN, true, 2.25/4.85 )"
+  root -q "/lustre/stor1/parfenov/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_sim_file_name, $start, $((start+n_events)), UNIGEN, true, 2.25/4.85 )"
 
-str_input_file=\"$output_file\"
-str_output_file=\"dst_$output_file\"
+  root -q "/lustre/stor1/parfenov/bmnroot/macro/run/run_reco_bmn.C( $str_sim_file_name, $str_rec_file_name, 0, $n_events )"
 
-root -q "/lustre/stor1/parfenov/bmnroot/macro/run/run_reco_bmn.C( $str_input_file, $str_output_file, 0, $n_events )"
+  root -q "/lustre/stor1/parfenov/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_rec_file_name, $str_sim_file_name, $str_geometry_file, $str_atree_file_name, 2.517 )"
 
-str_atree_file=\"atree_$output_file\"
-str_geometry_file=\"full_geometry.root\"
+  root -q "/lustre/stor1/parfenov/bmnroot/analysis/common/macro/run_analysistree_qa.C( $str_atree_file_name, $str_common_file_name, true )"
 
-root -q "/lustre/stor1/parfenov/bmnroot/analysis/common/macro/run_analysis_tree_maker.C( $str_output_file, $str_input_file, $str_geometry_file, $str_atree_file, 2.517 )"
-
-str_common_qa=\"common_qa.root\"
-root -q "/lustre/stor1/parfenov/bmnroot/analysis/common/macro/run_analysistree_qa.C( $str_atree_file, $str_common_qa, true )"
-str_tracking_qa=\"tracking_qa.root\"
-root -q "/lustre/stor1/parfenov/bmnroot/analysis/common/macro/run_tracking_qa.C( $str_atree_file, $str_tracking_qa, true )"
-
+  root -q "/lustre/stor1/parfenov/bmnroot/analysis/common/macro/run_tracking_qa.C( $str_atree_file_name, $str_tracking_file_name, true )"
+done
 echo PROCESS FINISHED
