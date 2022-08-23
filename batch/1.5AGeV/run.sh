@@ -7,6 +7,7 @@ generator=$3
 partition=mpd
 time=14:00:00
 
+output_dir=${output_dir}/$(basename ${file_list})
 lists_dir=${output_dir}/lists/
 log_dir=${output_dir}/log/
 
