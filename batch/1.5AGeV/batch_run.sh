@@ -42,11 +42,11 @@ export G4REALSURFACEDATA=$SIMPATH/share/Geant4-10.7.1/data/RealSurface2.2/
 for start in 0 500
 do
   str_input_file=\"$input_file\"
-  str_sim_file_name=\"$((start))_$((sim_file_name))\"
-  str_rec_file_name=\"$((start))_$((rec_file_name))\"
-  str_atree_file_name=\"$((start))_$((atree_file_name))\"
-  str_common_file_name=\"$((start))_$((common_qa_file_name))\"
-  str_tracking_file_name=\"$((start))_$((tracking_qa_file_name))\"
+  str_sim_file_name=\"${start}_${sim_file_name}\"
+  str_rec_file_name=\"${start}_${rec_file_name}\"
+  str_atree_file_name=\"${start}_${atree_file_name}\"
+  str_common_file_name=\"${start}_${common_qa_file_name}\"
+  str_tracking_file_name=\"${start}_${tracking_qa_file_name}\"
   str_geometry_file=\"full_geometry.root\"
 
   root -q "/lustre/stor1/parfenov/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_sim_file_name, $start, $((start+n_events)), UNIGEN, true, 2.25/4.85 )"
