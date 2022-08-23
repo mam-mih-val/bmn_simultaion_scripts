@@ -48,7 +48,7 @@ do
   str_tracking_file_name=\"${start}_${tracking_qa_file_name}\"
   str_geometry_file=\"full_geometry.root\"
 
-  root -q "/lustre/stor1/parfenov/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_sim_file_name, $start, $((start+n_events)), UNIGEN, true, 2.25/4.85 )"
+  root -q "/lustre/stor1/parfenov/bmnroot/macro/run/run_sim_bmn.C( $str_input_file, $str_sim_file_name, $start, $n_events, UNIGEN, true, 2.25/4.85 )"
 
   root -q "/lustre/stor1/parfenov/bmnroot/macro/run/run_reco_bmn.C( $str_sim_file_name, $str_rec_file_name, 0, $n_events )"
 

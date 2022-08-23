@@ -38,4 +38,4 @@ sbatch -J Files \
       --export=output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator \
       -- /lustre/stor1/parfenov/bmn_simultaion_scripts/batch/1.5AGeV/batch_run.sh
 
-echo JOBS HAVE BEEN COMPLETED!
+echo JOBS HAVE BEEN SUBMITTED!
