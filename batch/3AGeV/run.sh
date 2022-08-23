@@ -4,9 +4,10 @@ file_list=$1
 output_dir=$2
 generator=$3
 
-partition=cascade
+partition=mpd
 time=14:00:00
 
+output_dir=${output_dir}/$(basename ${file_list})
 lists_dir=${output_dir}/lists/
 log_dir=${output_dir}/log/
 
@@ -29,6 +30,7 @@ echo job_range: $job_range
 
 sbatch -J Files \
       -p $partition \
+      -q dirac \
       -t $time \
       -a $job_range \
       -e ${log_dir}/%A_%a.e \
@@ -36,4 +38,4 @@ sbatch -J Files \
       --export=output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,generator=$generator \
       -- /lustre/stor1/parfenov/bmn_simultaion_scripts/batch/3AGeV/batch_run.sh
 
-echo JOBS HAVE BEEN COMPLETED!
+echo JOBS HAVE BEEN SUBMITTED!
