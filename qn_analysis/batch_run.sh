@@ -12,10 +12,10 @@ cd $output_dir
 mkdir -p $job_num
 cd $job_num
 
-source /cvmfs/nica.jinr.ru/sw/os/login.sh
-module add GCC-Toolchain/
+module add gcc/v11.2.0
+module add FairSoft/apr21patches_gcc1120
+source /lustre/stor1/parfenov/root-6.24.06/install/bin/thisroot.sh
 
-source /lustre/stor1/parfenov/bmn_environment.sh
 echo
 date
 echo "Running preprocessing ..."
