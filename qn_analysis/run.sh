@@ -5,6 +5,7 @@ output_dir=$2
 n_files=$3
 
 time=14:00:00
+partition=mephi
 
 output_dir=${output_dir}/
 lists_dir=${output_dir}/lists/
@@ -27,14 +28,14 @@ echo lists_dir: $lists_dir
 echo n_runs: $n_runs
 echo job_range: $job_range
 
-qsub  -wd $PWD -cwd \
-      -N QnAnalysis \
-      -l h_rt=$time \
-      -l s_rt=$time \
-      -t $job_range \
-      -e ${log_dir}/ \
-      -o ${log_dir}/ \
-      -v output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir \
-      /scratch1/mmamaev/bmn_simultaion_scripts/qn_analysis/batch_run.sh
+sbatch -J QnAnalysis \
+      -p $partition \
+      -t $time \
+      -a $job_range \
+      -e ${log_dir}/%A_%a.e \
+      -o ${log_dir}/%A_%a.o \
+      --export=output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir \
+      -- /lustre/stor1/parfenov/bmn_simultaion_scripts/qn_analysis/batch_run.sh
+
 
 echo JOBS HAVE BEEN SUBMITTED!
