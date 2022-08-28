@@ -29,7 +29,7 @@ echo n_runs: $n_runs
 echo job_range: $job_range
 
 sbatch -J QnAnalysis \
-      --mem 3072
+      --mem 3072 \
       -p $partition \
       -t $time \
       -a $job_range \
