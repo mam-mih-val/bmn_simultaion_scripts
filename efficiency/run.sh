@@ -3,6 +3,7 @@
 file_list=$1
 output_dir=$2
 n_files=$3
+y_beam=$4
 
 time=14:00:00
 
@@ -34,7 +35,7 @@ qsub  -wd $PWD -cwd \
       -t $job_range \
       -e ${log_dir}/ \
       -o ${log_dir}/ \
-      -v output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir \
+      -v output_dir=$output_dir,file_list=$file_list,lists_dir=$lists_dir,y_beam=$y_beam \
       /scratch1/mmamaev/bmn_simultaion_scripts/efficiency/batch_run.sh
 
 echo JOBS HAVE BEEN SUBMITTED!
