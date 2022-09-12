@@ -22,6 +22,6 @@ echo "Running preprocessing ..."
 
 input_list=\"$filelist\"
 output_file=\"out.root\"
-root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_tracking_qa.C( $input_list, $output_file, false, $y_beam )"
+root -q "/scratch1/mmamaev/bmnroot/analysis/common/macro/run_analysistree_qa.C( $input_list, $output_file, false, $y_beam )"
 
 echo PROCESS FINISHED
