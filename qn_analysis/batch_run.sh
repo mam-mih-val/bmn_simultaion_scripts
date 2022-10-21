@@ -1,7 +1,10 @@
 #!/bin/bash
-#$ -l h=!(ncx182.jinr.ru|ncx211.jinr.ru)
+#$ -l h=!(ncx152.jinr.ru|ncx205.jinr.ru|ncx123.jinr.ru|ncx111.jinr.ru|ncx113.jinr.ru|ncx149.jinr.ru|ncx223.jinr.ru|ncx231.jinr.ru)
 
 format='+%Y/%m/%d-%H:%M:%S'
+
+date $format
+echo "JOB IS RUNNING on $HOSTNAME"
 
 date $format
 
